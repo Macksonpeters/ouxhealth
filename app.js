@@ -1,5 +1,6 @@
 const express = require("express");
 const fs = require("fs");
+const cors = require("cors");
 
 const app = express();
 
@@ -13,6 +14,8 @@ const logger = (req, res, next) => {
   console.log(method, url);
   next();
 };
+
+app.use(cors());
 
 app.use(logger);
 
