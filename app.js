@@ -165,6 +165,7 @@ app.get("/api/v1/generalsearch", (req, res) => {
       return (
         data.HospitalName.includes(searchItem) ||
         data.LGA.includes(searchItem) ||
+        data.State.startsWith(searchItem) ||
         data.HospitalOwnership.includes(searchItem)
       );
     });
