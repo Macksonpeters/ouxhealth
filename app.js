@@ -163,10 +163,10 @@ app.get("/api/v1/generalsearch", (req, res) => {
 
     generalData = sortData.filter((data) => {
       return (
-        data.HospitalName.includes(searchItem) ||
-        data.LGA.includes(searchItem) ||
+        data.HospitalName.startsWith(searchItem) ||
+        data.LGA.startsWith(searchItem) ||
         data.State.startsWith(searchItem) ||
-        data.HospitalOwnership.includes(searchItem)
+        data.HospitalOwnership.startsWith(searchItem)
       );
     });
 
